@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced QR Code Generator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Advanced QR Code Generator</h1>
+        <p>Create customized QR codes instantly</p>
+      </header>
+
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="generate">Generate</button>
+        <button class="tab-btn" data-tab="history">History</button>
+      </div>
+
+      <div class="tab-content" id="generate">
+        <div class="form">
+          <div class="input-group">
+            <label for="content">Content</label>
+            <input type="text" id="content" placeholder="Enter URL or text" spellcheck="false" />
+          </div>
+
+          <div class="customization">
+            <div class="input-group">
+              <label for="size">Size</label>
+              <input type="range" id="size" min="200" max="400" value="300" />
+              <span class="size-value">300 x 300</span>
+            </div>
+
+            <div class="color-inputs">
+              <div class="input-group">
+                <label for="foreground">Foreground Color</label>
+                <input type="color" id="foreground" value="#000000" />
+              </div>
+              <div class="input-group">
+                <label for="background">Background Color</label>
+                <input type="color" id="background" value="#FFFFFF" />
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="format">Format</label>
+              <select id="format">___
+                <option value="png">PNG</option>
+                <option value="svg">SVG</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="generate-btn">Generate QR Code</button>
+        </div>
+
+        <div class="qr-result">
+          <div class="qr-code">
+            <img src="" alt="qr-code" />
+          </div>
+          <div class="actions">
+            <button class="download-btn" disabled>Download</button>
+            <button class="share-btn" disabled>Share</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content hidden" id="history">
+        <div class="history-list"></div>
+      </div>
+    </div>
+
+    <script type="module" src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+    
+  </body>
+</html>
